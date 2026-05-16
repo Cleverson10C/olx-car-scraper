@@ -36,12 +36,12 @@ try:
     print(f'✅ Encontrados: {len(produtos)} produtos e {len(valores)} preços')
     
     # Salva no XLSX
-    with open('olx_carros.csv', 'w', encoding='utf-8') as f:
-        f.write('Produto,Preço\n')
+    with open('olx_carros.csv', 'w', encoding='utf-8') as file:
+        file.write('Produto,Preço\n')
         
         total = min(len(produtos), len(valores))
         for i in range(total):
-            f.write(f'"{produtos[i]}","{valores[i]}"\n')
+            file.write(f'"{produtos[i]}","{valores[i]}"\n')
             print(f'{i+1}. {produtos[i][:40]}... | {valores[i]}')
     
     print(f'🎉 {total} produtos salvos em olx_carros.csv!')
